@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Anime Watching Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        #animeTitle {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #animeDescription {
+            margin-top: 10px;
+            font-style: italic;
+        }
+        #animeImage {
+            margin-top: 20px;
+            max-width: 300px;
+            height: auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Anime Watching Generator</h1>
+    <p>Can't decide what to watch? Let us choose for you!</p>
+    <button onclick="generateRandomAnime()">Generate Random Anime</button>
+    <div id="animeDisplay">
+        <p id="animeTitle"></p>
+        <p id="animeDescription"></p>
+        <img id="animeImage" src="" alt="Anime Image" />
+    </div>
+
+    <script>
+        const animeDatabase = [
+            {
+                title: "Naruto",
+                description: "A young ninja with a dream to become the strongest ninja and gain the title of Hokage.",
+                image: "https://example.com/naruto.jpg"
+            },
+            {
+                title: "One Piece",
+                description: "Follow Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger.",
+                image: "https://example.com/onepiece.jpg"
+            },
+            {
+                title: "Attack on Titan",
+                description: "Humans are at war with giant humanoid Titans. Eren Yeager joins the fight for survival.",
+                image: "https://example.com/aot.jpg"
+            },
+            {
+                title: "My Hero Academia",
+                description: "In a world where superpowers are common, young Izuku Midoriya aims to become the greatest hero.",
+                image: "https://example.com/mha.jpg"
+            },
+            {
+                title: "Demon Slayer",
+                description: "A young boy becomes a demon slayer to avenge his family and cure his sister from a demon curse.",
+                image: "https://example.com/demonslayer.jpg"
+            },
+            {
+                title: "Sword Art Online",
+                description: "Players get trapped in a virtual reality MMORPG and must fight to survive.",
+                image: "https://example.com/sao.jpg"
+            },
+            {
+                title: "Fullmetal Alchemist: Brotherhood",
+                description: "Two brothers use alchemy in their quest to restore their bodies after a failed transmutation.",
+                image: "https://example.com/fmab.jpg"
+            },
+            {
+                title: "Death Note",
+                description: "A high school student discovers a supernatural notebook that allows him to kill anyone by writing their name.",
+                image: "https://example.com/deathnote.jpg"
+            },
+            {
+                title: "Tokyo Ghoul",
+                description: "A college student becomes a half-ghoul and must navigate the dangerous world of human and ghoul conflicts.",
+                image: "https://example.com/tokyoghoul.jpg"
+            },
+            {
+                title: "Hunter x Hunter",
+                description: "A young boy embarks on a journey to become a Hunter and find his missing father.",
+                image: "https://example.com/hxh.jpg"
+            }
+        ];
+
+        function generateRandomAnime() {
+            const randomIndex = Math.floor(Math.random() * animeDatabase.length);
+            const selectedAnime = animeDatabase[randomIndex];
+            
+            document.getElementById("animeTitle").innerText = selectedAnime.title;
+            document.getElementById("animeDescription").innerText = selectedAnime.description;
+            document.getElementById("animeImage").src = selectedAnime.image;
+        }
+    </script>
+</body>
+</html>
